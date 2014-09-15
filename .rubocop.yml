@@ -1,0 +1,10 @@
+AllCops:
+  Exclude:
+    - .bundle/**
+    - validator-nric.gemspec
+
+Documentation:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
