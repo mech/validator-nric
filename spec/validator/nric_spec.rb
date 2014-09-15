@@ -22,6 +22,16 @@ RSpec.describe Validator::Nric do
 
   describe 'lookup' do
     it 'retrieves the compared character from lookup table' do
+      expect(subject.lookup('S', 0)).to eq 'J'
+      expect(subject.lookup('S', 1)).to eq 'Z'
+      expect(subject.lookup('S', 2)).to eq 'I'
+      expect(subject.lookup('S', 3)).to eq 'H'
+      expect(subject.lookup('S', 4)).to eq 'G'
+      expect(subject.lookup('S', 5)).to eq 'F'
+      expect(subject.lookup('S', 6)).to eq 'E'
+      expect(subject.lookup('S', 7)).to eq 'D'
+      expect(subject.lookup('S', 8)).to eq 'C'
+      expect(subject.lookup('S', 9)).to eq 'B'
       expect(subject.lookup('S', 10)).to eq 'A'
     end
   end
