@@ -5,6 +5,3 @@ AllCops:
 
 Documentation:
   Enabled: false
-
-MethodLength:
-  Enabled: false
