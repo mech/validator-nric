@@ -13,12 +13,6 @@ RSpec.describe Validator::Nric do
       expect(subject.check('111111111')).to be false
       expect(subject.check('XXXXXXXXX')).to be false
     end
-
-    it 'is case insensitive' do
-      expect(subject.check('S8813925I')).to be true
-      expect(subject.check('s8813925I')).to be true
-      expect(subject.check('S8813925i')).to be true
-    end
   end
 
   describe 'mod' do
