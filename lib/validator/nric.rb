@@ -40,6 +40,7 @@ module Validator
     def check(nric)
       return false if nric.nil? || nric.size != 9
       nric.upcase!
+      return false if !['S', 'T', 'F', 'G'].include?(nric[0])
 
       century_prefix = nric[0, 1]
       ic_number = nric[1, 7]
