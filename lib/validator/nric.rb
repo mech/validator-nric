@@ -12,7 +12,7 @@ module Validator
     module_function
 
     # The multiplier for each individual digit
-    WEIGHT = [2, 7, 6, 5, 4, 3, 2]
+    WEIGHT = [2, 7, 6, 5, 4, 3, 2].freeze
 
     # Century prefix lookup tables
     #
@@ -23,10 +23,10 @@ module Validator
     #
     # Notice the it is backward of ABCDEFGHIZJ
     # For T and G, there is a shift of 4 places
-    S_TABLE = %w(J Z I H G F E D C B A)
-    T_TABLE = %w(G F E D C B A J Z I H)
-    F_TABLE = %w(X W U T R Q P N M L K)
-    G_TABLE = %w(R Q P N M L K X W U T)
+    S_TABLE = %w(J Z I H G F E D C B A).freeze
+    T_TABLE = %w(G F E D C B A J Z I H).freeze
+    F_TABLE = %w(X W U T R Q P N M L K).freeze
+    G_TABLE = %w(R Q P N M L K X W U T).freeze
 
     def mod(value)
       ic_array = value.each_char.map(&:to_i)
@@ -39,7 +39,7 @@ module Validator
 
     def check(nric)
       return false if nric.nil? || nric.size != 9
-      nric.upcase!
+      nric = nric.upcase
       return false unless %w(S T F G).include?(nric[0])
 
       century_prefix = nric[0, 1]

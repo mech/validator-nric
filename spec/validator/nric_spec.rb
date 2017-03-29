@@ -1,5 +1,4 @@
 RSpec.describe Validator::Nric do
-
   describe 'check' do
     it 'returns false if nric is nil' do
       expect(subject.check(nil)).to be false
@@ -40,5 +39,4 @@ RSpec.describe Validator::Nric do
       expect(subject.lookup('S', 10)).to eq 'A'
     end
   end
-
 end
