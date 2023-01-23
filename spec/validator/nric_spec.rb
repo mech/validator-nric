@@ -12,6 +12,13 @@ RSpec.describe Validator::Nric do
       expect(subject.check('111111111')).to be false
       expect(subject.check('XXXXXXXXX')).to be false
     end
+
+    it 'validates M series' do # taken from https://samliew.com/nric-generator
+      %w(M1987714T M1818317R M1090782Q M1803902P M1530517N M6193641J
+         M5140500L M7357583K M8721122X M1081075W M1954378U).each do |value|
+        expect(subject.check(value)).to be true
+      end
+    end
   end
 
   describe 'mod' do
